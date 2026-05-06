@@ -1,5 +1,7 @@
 # Gemma 4 E2B Local Chatbot
 
+Codes for my Youtube Video [https://youtu.be/lIms8UedInw]
+
 A fast, local multimodal AI chatbot using the new Gemma 4 E2B model, powered by Ollama and Gradio.
 
 ## Tech Stack
@@ -29,3 +31,25 @@ Then, open the local URL provided in your terminal (usually `http://127.0.0.1:78
 
 ## How it works
 `app.py` sets up a web interface using `gradio.ChatInterface` configured with `multimodal=True` so you can upload images along with text. The `chat` function extracts the text prompt and any attached image paths. These are then formatted into an Ollama compatible message dictionary and sent to the local `ollama` daemon. We use `stream=True` to yield chunks back to Gradio, creating a real-time typing effect.
+
+## Test Prompts
+
+### Image Analysis (Upload the Chart Image):
+
+Prompt: "What continent has the largest population according to this chart? Answer in one sentence."
+
+### OCR/Vision (Upload the Handwriting Image):
+
+Prompt: "Transcribe the first sentence of this handwritten note exactly."
+
+### Code Generation (Text Only):
+
+Prompt: "Write a Python function to reverse a string. No explanations, just the code."
+
+### Document/Structure (Text Only):
+
+Prompt: "Write a 3-point bulleted meeting agenda for a new software project kickoff."
+
+### Logic/Reasoning (Text Only):
+
+Prompt: "If I have 5 apples, eat 2, and buy 3 more, how many do I have? Be as brief as possible."
